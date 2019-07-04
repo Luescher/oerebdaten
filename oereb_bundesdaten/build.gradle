@@ -1,0 +1,80 @@
+import ch.so.agi.gretl.api.TransferSet
+import ch.so.agi.gretl.tasks.*
+import java.nio.file.Paths
+import de.undercouch.gradle.tasks.download.Download
+
+apply plugin: "de.undercouch.download"
+apply plugin: "ch.so.agi.gretl"
+
+
+/************************************************************/
+def dbUriOereb = "jdbc:postgresql://10.36.43.197:54321/oereb"
+def dbUserOereb = "admin"
+def dbPwdOereb = "admin"
+/************************************************************/
+
+
+defaultTasks "getAllOerebThemes"
+
+
+def pathToTempFolder = System.getProperty("java.io.tmpdir")
+def pathToUnzipFolder = Paths.get(pathToTempFolder, "unzip_data")
+def pathToDataZip = Paths.get(pathToTempFolder, "data.zip")
+
+// Oereb-Themen Bundesdaten
+ext {
+    oerebThemen = []
+    oerebThemen.add(["ch.astra.baulinien-nationalstrassen.oereb"])
+    oerebThemen.add(["ch.astra.projektierungszonen-nationalstrassen.oereb"])
+    oerebThemen.add(["ch.bav.baulinien-eisenbahnanlagen.oereb"])
+    oerebThemen.add(["ch.bav.projektierungszonen-eisenbahnanlagen.oereb"])
+    oerebThemen.add(["ch.bazl.baulinien-flughafenanlagen.oereb"])
+    oerebThemen.add(["ch.bazl.projektierungszonen-flughafenanlagen.oereb"])
+    oerebThemen.add(["ch.bav.kataster-belasteter-standorte-oev.oereb"])
+    oerebThemen.add(["ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb"])
+    oerebThemen.add(["ch.bazl.sicherheitszonenplan.oereb"])
+}
+
+// Oereb-Themen herunterladen und importieren
+oerebThemen.each { oerebThema ->
+    def themaName = oerebThema.getAt(0)
+
+    task "oereb_download_$themaName"(type: Download){
+        description = "Download Bundesdaten"
+        src "https://data.geo.admin.ch/" + themaName + "/data.zip"
+        dest pathToTempFolder
+        overwrite true
+    }
+
+    task "oereb_unzipData_$themaName"(type: Copy, dependsOn: "oereb_download_$themaName"){
+        description = "Unzip Data.zip"
+        from zipTree(pathToDataZip)
+        into file(pathToUnzipFolder)
+        include "**/*.xtf"
+        rename { String fileName ->
+            if (fileName.contains(themaName)) {
+                return themaName + ".xtf"
+            }
+            return fileName
+        }
+    }
+
+    task "oereb_dbImport_$themaName"(type: Ili2pgReplace, dependsOn: "oereb_unzipData_$themaName"){
+        description = "Import Bundesdaten in DB agi_oereb"
+        database = [dbUriOereb, dbUserOereb, dbPwdOereb]
+        dbschema = "agi_oereb"
+        dataset = themaName
+        models = "OeREBKRMtrsfr_V1_1"
+        disableValidation = false
+        dataFile = file(Paths.get(pathToUnzipFolder.toString(), themaName + ".xtf"))
+        strokeArcs = true
+    }    
+}
+
+task getAllOerebThemes() {
+    description = "Import der Oereb-Bundesdaten"
+}
+
+getAllOerebThemes.dependsOn {
+    tasks.findAll { task -> task.name.startsWith('oereb_') }
+}

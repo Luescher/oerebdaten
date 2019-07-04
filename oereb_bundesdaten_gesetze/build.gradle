@@ -1,0 +1,49 @@
+import ch.so.agi.gretl.api.TransferSet
+import ch.so.agi.gretl.tasks.*
+import java.nio.file.Paths
+import de.undercouch.gradle.tasks.download.Download
+
+apply plugin: "de.undercouch.download"
+apply plugin: "ch.so.agi.gretl"
+
+
+/************************************************************/
+def dbUriOereb = "jdbc:postgresql://10.36.43.197:54321/oereb"
+def dbUserOereb = "admin"
+def dbPwdOereb = "admin"
+/************************************************************/
+
+
+defaultTasks "oereb_dbImport_Gesetze"
+
+
+// Download-Verzeichnis
+def pathToTempFolder = System.getProperty("java.io.tmpdir")
+def pathToUnzipFolder = Paths.get(pathToTempFolder, "unzip_data")
+def pathToDataZip = Paths.get(pathToTempFolder, "data.zip")
+
+ 
+// Bundesgesetze importieren (nur bei Bedarf)
+
+task "oereb_DownloadGesetze"(type: Download){
+    description = "Download Bundesdaten"
+    doLast {
+        println "Download beendet: OeREBKRM_V1_1_Gesetze"
+    }
+    src "http://models.geo.admin.ch/V_D/OeREB/OeREBKRM_V1_1_Gesetze_20180501.xml"
+    dest pathToTempFolder
+    overwrite true
+}
+    
+task "oereb_dbImport_Gesetze"(type: Ili2pgReplace, dependsOn: "oereb_DownloadGesetze"){
+    description = "Import Bundesdaten Gesetze in DB agi_oereb"
+    doLast {
+        println "Gesetze in OEREB-DB importiert"
+    }
+    database = [dbUriOereb, dbUserOereb, dbPwdOereb]
+    dbschema = "agi_oereb"
+    dataset = "OeREBKRM_V1_1_Gesetze"
+    models = "OeREBKRMvs_V1_1"
+    disableValidation = false
+    dataFile = file(Paths.get(pathToTempFolder.toString(), "OeREBKRM_V1_1_Gesetze_20180501.xml"))
+}
