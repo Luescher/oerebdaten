@@ -1,0 +1,204 @@
+import ch.so.agi.gretl.api.TransferSet
+import ch.so.agi.gretl.tasks.*
+import java.nio.file.Paths
+import de.undercouch.gradle.tasks.download.Download
+
+apply plugin: "de.undercouch.download"
+apply plugin: "ch.so.agi.gretl"
+
+
+defaultTasks "exportAllNplThemes"
+
+
+// Oereb: Datenumbau Nutzungsplanung
+ext {
+    //dbUriEdit = "jdbc:postgresql://localhost:54321/edit"
+    //dbUserEdit = "gretl"
+    //dbPwdEdit = "gretl"
+    /************************************************************/
+    dbUriOereb_devel = "jdbc:postgresql://10.36.43.197:54321/oereb"
+    dbUserOereb_devel = "admin"
+    dbPwdOereb_devel = "admin"
+    /************************************************************/
+
+    nplThemen = [
+        ["npl_grundnutzung"],
+        ["npl_ueberlagernd_flaeche"],
+        ["npl_ueberlagernd_linie"],
+        ["npl_ueberlagernd_punkt"],
+        ["npl_baulinien"],
+        ["npl_sondernutzungsplaene"]
+    ]
+}
+
+
+//def pathToTempFolder = System.getProperty("java.io.tmpdir")
+def pathToTempFolder =  System.getProperty("user.dir")
+
+
+// URL der Gesetze und zuständigen Stellen ???
+def cantonalLegalBasisBaseUrl = ""
+def responsibleOfficesBaseUrl = ""
+def GROUP = "Datenumbau NPLSO -> Transferstruktur (Staging)"                                         // wozu wird die GROUP benötigt?
+
+
+/****************************************************************************************************/
+// Dieser Import wird nur ausgeführt, um die NPL-Daten in der Entwicklungs-DB zu haben
+
+// Anlegen Schema arp_npl (später in Edit-DB schon vorhanden)
+task importNplSchema(type: Ili2pgImportSchema){
+    database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+    models = "SO_Nutzungsplanung_20171118"
+    dbschema = "arp_npl"
+    //createImportTabs = true                                                                      // funktioniert nicht im Gretljob, müsste ili2pg-4-1-1 sein
+    createBasketCol = true
+    createDatasetCol = true
+    strokeArcs = true
+    logFile = "ili2pg.log"
+
+}
+
+task importNplData(type: Ili2pgReplace, dependsOn: 'importNplSchema') {
+    description = "Import benötigte NPL-Daten in Entwicklugns-DB"
+    group = GROUP
+    database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+    dbschema = "arp_npl"
+    dataFile = file(Paths.get(pathToTempFolder.toString(), "2580_2018-02-13.xtf"))
+    dataset = "2580"
+    disableValidation = true
+    strokeArcs = true
+    //--createImportTabs --createBasketCol --createDatasetCol ???
+}
+
+
+
+// Anlegen Schema agi_oereb_npl_staging als Transferstruktur (später in Edit-DB vorhanden)
+task importNplStagingSchema(type: Ili2pgImportSchema, dependsOn: 'importNplData'){
+    database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+    models = "OeREBKRMvs_V1_1;OeREBKRMtrsfr_V1_1"
+    dbschema = "agi_oereb_npl_staging"
+    //createImportTabs                                                                            // funktioniert nicht im Gretljob, müsste ili2pg-4-1-1 sein
+    createBasketCol
+    createDatasetCol
+    strokeArcs = true
+    logFile = "ili2pg.log"
+}
+/****************************************************************************************************/
+
+
+/* *********************** noch nicht benötigt, da URL der Gesetze nicht bekannt
+// Lädt die kantonalen Gesetze herunter und importiert sie in das ÖREB-NPL-Staging-Schema.
+
+task downloadKantonaleGesetzes(type: Download) {
+    description = "Download kantonale Gesetze (ch.so.sk.gesetze)"
+    group = GROUP
+    src cantonalLegalBasisBaseUrl + "ch.so.sk.gesetze.xtf"
+    dest pathToTempFolder
+    overwrite true
+    doLast {
+        println "File downloaded to: " + pathToTempFolder
+    }
+}
+*/
+
+task importKantonaleGesetzeToStaging(type: Ili2pgReplace) {
+// task importCantonalLegalBasisToStaging(type: Ili2pgReplace, dependsOn: 'downloadCantonalLegalBasis') {
+    description = "Import kantonale Gesetze (ch.so.sk.gesetze)"
+    group = GROUP
+    database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+    models = "OeREBKRMvs_V1_1"
+    dbschema = "agi_oereb_npl_staging"
+    dataFile = file(Paths.get(pathToTempFolder.toString(), "ch.so.sk.gesetze.xtf"))
+    dataset = "ch.so.sk.legal_basis" // Anderes (in diesem Fall beliebig) Dataset, da die dazugehörigen Daten nicht Bestandteil des Transfers (des exportierten Files) sein dürfen.
+    disableValidation = true
+}
+
+
+/* *********************** noch nicht benötigt, da URL der zuständigen Stellen nicht bekannt
+// Lädt die Daten der zuständigen Stellen der Nutzungsplanung herunter
+// und importiert diese in das ÖREB-NPL-Staging-Schema.
+
+task downloadZustaendigeStellen(type: Download) {
+    description = "Download zuständige Stellen (ch.so.agi.zustaendigeStellen)"
+    group = GROUP
+    src responsibleOfficesBaseUrl + "ch.so.agi.zustaendigeStellen.xtf"
+    dest pathToTempFolder
+    overwrite true
+    doLast {
+        println "File downloaded to: " + pathToTempFolder
+    }
+}
+*/
+
+
+task importZustaendigeStellenToStaging(type: Ili2pgReplace) {
+// task importZustaendigeStellenToStaging(type: Ili2pgReplace, dependsOn: 'downloadZustaendigeStellen') {
+    description = "Import zuständige Stellen (ch.so.agi.zustaendigeStellen)"
+    group = GROUP
+    database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+    models = "OeREBKRMtrsfr_V1_1"
+    dbschema = "agi_oereb_npl_staging"
+    dataFile = file(Paths.get(pathToTempFolder.toString(), "ch.so.agi.zustaendigeStellen.xtf"))
+    dataset = "ch.so.arp.nutzungsplanung" // Gleiches Dataset wie anschliessend die Daten des Datenumbaues, da Ämterinformationen Bestandteil des Transfers sein müssen. TODO: Herausforderung pro Gemeinde in Verbindung mit der/den fehlenden zuständigen Stelle(n)
+    disableValidation = true
+}
+
+
+// Alle Nutzungsplanung-Themen umbauen, exportieren und ins
+// Schema agi_oereb_staging der Oereb-DB importieren
+
+nplThemen.each { nplThema ->
+    def thema = nplThema.getAt(0)
+
+    // Löscht sämtliche Daten (ausser den Gesetzen) aus dem ÖREB-NPL-Staging-Schema in der Edit-DB      // Gesetze werden einmalig zu Beginn importiert
+    task "nplDeleteUmbau_$thema"(type: SqlExecutor){
+        database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+        sqlFiles = ['delete_npl_umbau.sql']
+        println "hallo nplDeleteUmbau"
+    }
+    
+    task "nplDatenumbau_$thema"(type: SqlExecutor, dependsOn: "nplDeleteUmbau_$thema"){
+        database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+        sqlFiles = [thema + ".sql"]
+        println "hallo nplUmbau"
+    }
+    
+    
+/*
+// geht nur mit ili2pg-4-1-1
+    
+    task "nplExportNutzungsplanung_$thema"(type: Ili2pgExport, dependsOn: "nplDatenumbau_$thema") {
+        description = "Export der umgebauten Daten aus dem Staging-Schema"
+        //group = GROUP
+        database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+        models = "OeREBKRMvs_V1_1;OeREBKRMtrsfr_V1_1"
+        dbschema = "agi_oereb_npl_staging"
+        dataFile = file(Paths.get(pathToTempFolder.toString(), "ch.so.arp.nutzungsplanung_" + thema + ".oereb.xtf"))
+        dataset = "ch.so.arp.nutzungsplanung"
+        println "hallo nplExportNutzungsplanung"
+    }
+    
+    task "nplImportNutzungsplanung_$thema"(type: Ili2pgReplace, dependsOn: "nplExportNutzungsplanung_$thema") {
+        description = "Import der umgebauten Daten ins Schema agi_oereb_staging der Oereb"
+        group = GROUP
+        database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+        dbschema = "arp_npl"
+        dataFile = file(Paths.get(pathToTempFolder.toString(), "2580_2018-02-13.xtf"))
+        dataset = "2580"
+        disableValidation = true
+        strokeArcs = true
+        //--createImportTabs --createBasketCol --createDatasetCol ???
+    }
+*/
+
+}
+
+
+task exportAllNplThemes() {
+    description = "Umbau der NPL-Daten"
+}
+
+exportAllNplThemes.dependsOn {
+   // tasks.findAll { task -> task.name.startsWith('nplImport') }
+   tasks.findAll { task -> task.name.startsWith('nplDatenumbau_') }
+}

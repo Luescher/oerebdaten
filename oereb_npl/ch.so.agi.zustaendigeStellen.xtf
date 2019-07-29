@@ -1,0 +1,1614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+  <HEADERSECTION SENDER="Amt für Geoinformation" VERSION="2.3">
+    <MODELS>
+      <MODEL NAME="OeREBKRM_V1_1" VERSION="2016-08-15" URI="http://models.geo.admin.ch/V_D/OeREB/"/>
+	  <MODEL NAME="OeREBKRMvs_V1_1" VERSION="2016-08-15" URI="http://models.geo.admin.ch/V_D/OeREB/"/>
+	  <MODEL NAME="OeREBKRMtrsfr_V1_1" VERSION="2016-08-15" URI="http://models.geo.admin.ch/V_D/OeREB/"/>
+    </MODELS>
+    <!-- Stand der XML-Datei -->
+    <COMMENT>"2019-06-24"</COMMENT>
+  </HEADERSECTION>
+  <DATASECTION>
+    <OeREBKRMtrsfr_V1_1.Transferstruktur BID="b2">  	
+      <!-- Zuständige Stellen -->
+	  <!-- Staatskanzlei -->
+      <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.so.sk">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Staatskanzlei</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>https://www.so.ch/staatskanzlei/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>
+	  <!-- Amt für Raumplanung -->
+      <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.so.arp">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Amt für Raumplanung</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>https://arp.so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>
+	  <!-- Amt für Umwelt-->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.so.afu">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Amt für Umwelt</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>https://afu.so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>
+	  <!-- Amt für Denkmalpflege und Archäologie-->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.so.ada">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Amt für Denkmalpflege und Archäologie</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>https://ada.so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>	  
+	  <!-- 	Amt für Wald, Jagd und Fischerei -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.so.awjf">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Amt für Wald, Jagd und Fischerei</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>https://awjf.so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>		  	  
+	  <!-- Gemeinde Aedermannsdorf -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2421">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Aedermannsdorf</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.aedermannsdorf.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Aeschi (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2511">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Aeschi (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.aeschi-so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Balm b. Günsberg -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2541">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Balm b. Günsberg</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.balm-balmberg.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Balsthal -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2422">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Balsthal</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.balsthal.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Beinwil (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2612">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Beinwil (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.beinwil-so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Bellach -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2542">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Bellach</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.bellach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Bettlach -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2543">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Bettlach</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.bettlach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Biberist -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2513">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Biberist</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.biberist.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Biezwil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2445">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Biezwil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.biezwil.so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Bolken -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2514">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Bolken</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.bolken.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Boningen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2571">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Boningen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.boningen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Breitenbach -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2613">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Breitenbach</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.breitenbach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Buchegg -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2465">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Buchegg</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.buchegg-so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Bärschwil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2611">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Bärschwil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.baerschwil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Bättwil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2471">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Bättwil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.baettwil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Büren (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2472">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Büren (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.bueren-so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Büsserach -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2614">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Büsserach</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.buesserach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Deitingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2516">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Deitingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.deitingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Derendingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2517">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Derendingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.derendingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Dornach -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2473">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Dornach</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.dornach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Drei Höfe -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2535">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Drei Höfe</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.dreihoefe.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Dulliken -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2573">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Dulliken</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.dulliken.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Däniken -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2572">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Däniken</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.daeniken.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Egerkingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2401">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Egerkingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.egerkingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Eppenberg-Wöschnau -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2574">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Eppenberg-Wöschnau</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.eppenberg-woeschnau.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Erlinsbach (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2503">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Erlinsbach (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.erlinsbach-so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Erschwil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2615">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Erschwil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://erschwil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Etziken -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2518">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Etziken</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.etziken.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Fehren -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2616">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Fehren</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.fehren.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Feldbrunnen-St.Niklaus -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2544">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Feldbrunnen-St.Niklaus</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.feldbrunnen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Flumenthal -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2545">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Flumenthal</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.flumenthal.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Fulenbach -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2575">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Fulenbach</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.fulenbach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Gempen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2474">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Gempen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.gempen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Gerlafingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2519">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Gerlafingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.gerlafingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Grenchen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2546">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Grenchen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.grenchen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Gretzenbach -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2576">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Gretzenbach</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.gretzenbach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Grindel -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2617">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Grindel</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.grindel.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Gunzgen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2578">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Gunzgen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.gunzgen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Gänsbrunnen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2423">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Gänsbrunnen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.gaensbrunnen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Günsberg -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2547">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Günsberg</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.guensberg.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Halten -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2520">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Halten</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.halten.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Hauenstein-Ifenthal -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2491">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Hauenstein-Ifenthal</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.hauenstein-ifenthal.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Herbetswil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2424">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Herbetswil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.herbetswil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Himmelried -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2618">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Himmelried</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.himmelried.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Hochwald -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2475">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Hochwald</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.hochwald.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Hofstetten-Flüh -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2476">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Hofstetten-Flüh</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.hofstetten-flueh.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Holderbank (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2425">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Holderbank (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.holderbank-so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Horriwil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2523">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Horriwil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.horriwil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Hubersdorf -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2548">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Hubersdorf</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://hubersdorf.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Hägendorf -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2579">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Hägendorf</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.haegendorf.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Härkingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2402">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Härkingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.haerkingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Hüniken -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2524">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Hüniken</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.hueniken.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Kammersrohr -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2549">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Kammersrohr</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb></AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Kappel (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2580">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Kappel (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.kappel-so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Kestenholz -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2403">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Kestenholz</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.kestenholz.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Kienberg -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2492">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Kienberg</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.kienberg.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Kleinlützel -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2619">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Kleinlützel</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.kleinluetzel.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Kriegstetten -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2525">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Kriegstetten</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.kriegstetten.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Langendorf -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2550">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Langendorf</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://langendorf-so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Laupersdorf -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2426">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Laupersdorf</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.laupersdorf.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Lohn-Ammannsegg -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2526">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Lohn-Ammannsegg</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.lohn-ammannsegg.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Lommiswil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2551">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Lommiswil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.lommiswil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Lostorf -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2493">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Lostorf</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.lostorf.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Luterbach -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2527">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Luterbach</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.luterbach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Lüsslingen-Nennigkofen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2464">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Lüsslingen-Nennigkofen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.luesslingen-nennigkofen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Lüterkofen-Ichertswil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2455">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Lüterkofen-Ichertswil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.lueterkofen-ichertswil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Lüterswil-Gächliwil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2456">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Lüterswil-Gächliwil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.lueterswil-gaechliwil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Matzendorf -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2427">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Matzendorf</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.matzendorf.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Meltingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2620">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Meltingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.meltingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Messen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2457">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Messen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://messen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Metzerlen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2477">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Metzerlen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.metzerlen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Mümliswil-Ramiswil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2428">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Mümliswil-Ramiswil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.muemliswil-ramiswil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Neuendorf -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2404">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Neuendorf</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.neuendorf.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Niederbuchsiten -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2405">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Niederbuchsiten</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.niederbuchsiten.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Niedergösgen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2495">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Niedergösgen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.niedergoesgen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Nuglar-St.Pantaleon -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2478">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Nuglar-St.Pantaleon</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.nuglar.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Nunningen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2621">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Nunningen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.nunningen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Oberbuchsiten -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2406">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Oberbuchsiten</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.oberbuchsiten.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Oberdorf (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2553">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Oberdorf (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.oberdorf.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Obergerlafingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2528">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Obergerlafingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.obergerlafingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Obergösgen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2497">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Obergösgen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.obergoesgen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Oekingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2529">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Oekingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.oekingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Oensingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2407">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Oensingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.oensingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Olten -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2581">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Olten</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.olten.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Recherswil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2530">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Recherswil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.recherswil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Rickenbach (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2582">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Rickenbach (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.rickenbach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Riedholz -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2554">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Riedholz</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.riedholz.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Rodersdorf -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2479">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Rodersdorf</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.rodersdorf.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Rohr (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2498">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Rohr (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.rohr-so.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Rüttenen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2555">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Rüttenen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.ruettenen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Schnottwil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2461">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Schnottwil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.schnottwil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Schönenwerd -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2583">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Schönenwerd</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.schoenenwerd.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Seewen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2480">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Seewen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.seewen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Selzach -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2556">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Selzach</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.selzach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Solothurn -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2601">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Solothurn</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.stadt-solothurn.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Starrkirch-Wil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2584">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Starrkirch-Wil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.starrkirch-wil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Stüsslingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2499">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Stüsslingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.stuesslingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Subingen -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2532">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Subingen</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.subingen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Trimbach -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2500">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Trimbach</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.trimbach.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Unterramsern -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2463">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Unterramsern</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.unterramsern.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Walterswil (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2585">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Walterswil (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.walterswil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Wangen b. Olten -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2586">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Wangen b. Olten</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.wangenbo.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Welschenrohr -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2429">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Welschenrohr</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.welschenrohr.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Winznau -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2501">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Winznau</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.winznau.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Wisen (SO) -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2502">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Wisen (SO)</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.wisen.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Witterswil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2481">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Witterswil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.witterswil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Wolfwil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2408">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Wolfwil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.wolfwil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Zuchwil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2534">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Zuchwil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.zuchwil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- Gemeinde Zullwil -->
+	  <OeREBKRMvs_V1_1.Vorschriften.Amt TID="ch.2622">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Gemeinde Zullwil</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>http://www.zullwil.ch/</AmtImWeb>
+      </OeREBKRMvs_V1_1.Vorschriften.Amt>  
+	  <!-- bis hier -->
+    </OeREBKRMtrsfr_V1_1.Transferstruktur>
+  </DATASECTION>
+</TRANSFER>
