@@ -67,10 +67,10 @@ INSERT INTO
         substring(typ_grundnutzung.typ_kt FROM 1 FOR 4) AS artcode,
         'urn:fdc:ilismeta.interlis.ch:2017:NP_Typ_Kanton_Grundnutzung' AS artcodeliste,      /* TODO: woher stammt die artcodeliste?' */
         CASE 
-            WHEN grundnutzung.rechtsstatus IS NULL THEN 'inKraft' /* TODO: tbd */
+            WHEN grundnutzung.rechtsstatus IS NULL THEN 'inKraft'                            /* TODO: tbd??? */
             ELSE grundnutzung.rechtsstatus
         END AS rechtsstatus,
-        grundnutzung.publiziertab, /* TODO: tbd */
+        grundnutzung.publiziertab,                                                           /* TODO: tbd */
         amt.t_id AS zustaendigestelle
     FROM
         arp_npl.nutzungsplanung_typ_grundnutzung AS typ_grundnutzung

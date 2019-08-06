@@ -21,19 +21,31 @@ ext {
     dbPwdOereb_devel = "admin"
     /************************************************************/
 
+
     nplThemen = [
         ["npl_grundnutzung"],
         ["npl_ueberlagernd_flaeche"],
         ["npl_ueberlagernd_linie"],
         ["npl_ueberlagernd_punkt"],
         ["npl_baulinien"],
-        ["npl_sondernutzungsplaene"]
+        ["npl_sondernutzungsplaene"],
+        ["npl_laermempfindlichkeitsstufen"]
+  
+ 
+   ]
+/*
+    nplThemen = [
+        ["npl_grundnutzung"]
     ]
+*/
 }
 
 
 //def pathToTempFolder = System.getProperty("java.io.tmpdir")
 def pathToTempFolder =  System.getProperty("user.dir")
+
+//def pathToZustaendigeStellen =  "sftp://geoapp.verw.rootso.org/opt/sogis_pic/geodata/"
+//def pathTo = Paths.get(pathToGeodataFolder, "data.zip")
 
 
 // URL der Gesetze und zuständigen Stellen ???
@@ -42,68 +54,18 @@ def responsibleOfficesBaseUrl = ""
 def GROUP = "Datenumbau NPLSO -> Transferstruktur (Staging)"                                         // wozu wird die GROUP benötigt?
 
 
-/****************************************************************************************************/
-// Dieser Import wird nur ausgeführt, um die NPL-Daten in der Entwicklungs-DB zu haben
 
-// Anlegen Schema arp_npl (später in Edit-DB schon vorhanden)
-task importNplSchema(type: Ili2pgImportSchema){
-    database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
-    models = "SO_Nutzungsplanung_20171118"
-    dbschema = "arp_npl"
-    //createImportTabs = true                                                                      // funktioniert nicht im Gretljob, müsste ili2pg-4-1-1 sein
-    createBasketCol = true
-    createDatasetCol = true
-    strokeArcs = true
-    logFile = "ili2pg.log"
-
-}
-
-task importNplData(type: Ili2pgReplace, dependsOn: 'importNplSchema') {
-    description = "Import benötigte NPL-Daten in Entwicklugns-DB"
-    group = GROUP
-    database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
-    dbschema = "arp_npl"
-    dataFile = file(Paths.get(pathToTempFolder.toString(), "2580_2018-02-13.xtf"))
-    dataset = "2580"
-    disableValidation = true
-    strokeArcs = true
-    //--createImportTabs --createBasketCol --createDatasetCol ???
-}
-
-
-
-// Anlegen Schema agi_oereb_npl_staging als Transferstruktur (später in Edit-DB vorhanden)
-task importNplStagingSchema(type: Ili2pgImportSchema, dependsOn: 'importNplData'){
-    database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
-    models = "OeREBKRMvs_V1_1;OeREBKRMtrsfr_V1_1"
-    dbschema = "agi_oereb_npl_staging"
-    //createImportTabs                                                                            // funktioniert nicht im Gretljob, müsste ili2pg-4-1-1 sein
-    createBasketCol
-    createDatasetCol
-    strokeArcs = true
-    logFile = "ili2pg.log"
-}
-/****************************************************************************************************/
-
-
-/* *********************** noch nicht benötigt, da URL der Gesetze nicht bekannt
-// Lädt die kantonalen Gesetze herunter und importiert sie in das ÖREB-NPL-Staging-Schema.
-
-task downloadKantonaleGesetzes(type: Download) {
-    description = "Download kantonale Gesetze (ch.so.sk.gesetze)"
-    group = GROUP
-    src cantonalLegalBasisBaseUrl + "ch.so.sk.gesetze.xtf"
+// Gesetze und zuständige Stellen bei jeder Änderung in Transferstruktur in der Edit-DB importieren
+task "downloadKantonaleGesetze"(type: Download){
+    description = "Download kantonale Gesetze "
+    src "https://geo.so.ch/geodata/ch.so.sk.gesetze.oereb/ch.so.sk.gesetze.xtf"
     dest pathToTempFolder
     overwrite true
-    doLast {
-        println "File downloaded to: " + pathToTempFolder
-    }
 }
-*/
 
-task importKantonaleGesetzeToStaging(type: Ili2pgReplace) {
-// task importCantonalLegalBasisToStaging(type: Ili2pgReplace, dependsOn: 'downloadCantonalLegalBasis') {
-    description = "Import kantonale Gesetze (ch.so.sk.gesetze)"
+
+task importCantonalLegalBasisToStaging(type: Ili2pgReplace, dependsOn: 'downloadKantonaleGesetze'){
+    description = "Import kantonale Gesetze"
     group = GROUP
     database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
     models = "OeREBKRMvs_V1_1"
@@ -113,27 +75,16 @@ task importKantonaleGesetzeToStaging(type: Ili2pgReplace) {
     disableValidation = true
 }
 
-
-/* *********************** noch nicht benötigt, da URL der zuständigen Stellen nicht bekannt
-// Lädt die Daten der zuständigen Stellen der Nutzungsplanung herunter
-// und importiert diese in das ÖREB-NPL-Staging-Schema.
-
-task downloadZustaendigeStellen(type: Download) {
-    description = "Download zuständige Stellen (ch.so.agi.zustaendigeStellen)"
+task downloadZustaendigeStellen(type: Download){
+    description = "Download zuständige Stellen"
     group = GROUP
-    src responsibleOfficesBaseUrl + "ch.so.agi.zustaendigeStellen.xtf"
+    src "https://geo.so.ch/geodata/ch.so.agi.zustaendigestellen.oereb/ch.so.agi.zustaendigestellen.xtf"
     dest pathToTempFolder
     overwrite true
-    doLast {
-        println "File downloaded to: " + pathToTempFolder
-    }
 }
-*/
 
-
-task importZustaendigeStellenToStaging(type: Ili2pgReplace) {
-// task importZustaendigeStellenToStaging(type: Ili2pgReplace, dependsOn: 'downloadZustaendigeStellen') {
-    description = "Import zuständige Stellen (ch.so.agi.zustaendigeStellen)"
+task importZustaendigeStellenToStaging(type: Ili2pgReplace, dependsOn: 'downloadZustaendigeStellen'){
+    description = "Import zuständige Stellen"
     group = GROUP
     database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
     models = "OeREBKRMtrsfr_V1_1"
@@ -144,9 +95,7 @@ task importZustaendigeStellenToStaging(type: Ili2pgReplace) {
 }
 
 
-// Alle Nutzungsplanung-Themen umbauen, exportieren und ins
-// Schema agi_oereb_staging der Oereb-DB importieren
-
+// Alle Nutzungsplanung-Themen umbauen und mit Iconizer die Symbole erzeugen
 nplThemen.each { nplThema ->
     def thema = nplThema.getAt(0)
 
@@ -163,42 +112,89 @@ nplThemen.each { nplThema ->
         println "hallo nplUmbau"
     }
     
+    // TODO: host, port, wms name and layer name as variable!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // Erzeugen der Symbole und Update der Daten in der Datenbank. Es wird ein WMS-Server benötigt.
+    task "updateSymbols_$thema"(type: OerebIconizerQgis3, dependsOn: "nplDatenumbau_$thema"){
+        description = "Erzeugt die Symbole und den Text für die einzelnen Legendeneinträge."
     
+            sldUrl = "http://10.36.43.197:8083/qgis/oereb-wms-gpkg?&SERVICE=WMS&REQUEST=GetStyles&LAYERS=ch.so.Nutzungsplanung.NutzungsplanungGrundnutzung&SLD_VERSION=1.1.0"
+    
+            legendGraphicUrl = "http://10.36.43.197:8083/qgis/oereb-wms-gpkg?SERVICE=WMS&REQUEST=GetLegendGraphic&LAYER=ch.so.Nutzungsplanung.NutzungsplanungGrundnutzung&FORMAT=image/png&RULELABEL=false&LAYERTITLE=false&HEIGHT=35&WIDTH=70&SYMBOLHEIGHT=3&SYMBOLWIDTH=6&DPI=300"
+
+            database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+    
+            //dbQTable = "arp_npl_grundnutzung_oereb.transferstruktur_legendeeintrag"
+            dbQTable = "agi_oereb_npl_staging.transferstruktur_legendeeintrag"
+            typeCodeAttrName = "artcode"
+            symbolAttrName = "symbol"
+            legendTextAttrName = "legendetext_de"
+        /*
+            finalizedBy {
+                stopWMSDockerContainer??????????????????????'
+            }
+        */
+    } 
+    
+}
+ 
+ 
+ 
+// Export der gesamten Nutzungplanung????
+task "nplExportNutzungsplanung"(type: Ili2pgExport){
+    description = "Export der umgebauten Daten aus dem Staging-Schema"
+    group = GROUP
+    database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+    models = "OeREBKRMtrsfr_V1_1"
+    dbschema = "agi_oereb_npl_staging"
+    dataFile = file(Paths.get(pathToTempFolder.toString(), "ch.so.arp.nutzungsplanung.oereb.xtf"))
+    //dataFile = file(Paths.get(pathToTempFolder.toString(), "ch.so.arp.nutzungsplanung_" + thema + ".oereb.xtf"))
+    dataset = "ch.so.arp.nutzungsplanung"
+    disableValidation = true                                       //************************************************ Achtung disableValidation
+    println "hallo nplExportNutzungsplanung"
+}
+ 
+ 
+ 
+    
+// Dieser Task muss separat ausgeführt werden
 /*
-// geht nur mit ili2pg-4-1-1
-    
-    task "nplExportNutzungsplanung_$thema"(type: Ili2pgExport, dependsOn: "nplDatenumbau_$thema") {
-        description = "Export der umgebauten Daten aus dem Staging-Schema"
-        //group = GROUP
-        database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
-        models = "OeREBKRMvs_V1_1;OeREBKRMtrsfr_V1_1"
-        dbschema = "agi_oereb_npl_staging"
-        dataFile = file(Paths.get(pathToTempFolder.toString(), "ch.so.arp.nutzungsplanung_" + thema + ".oereb.xtf"))
-        dataset = "ch.so.arp.nutzungsplanung"
-        println "hallo nplExportNutzungsplanung"
-    }
-    
-    task "nplImportNutzungsplanung_$thema"(type: Ili2pgReplace, dependsOn: "nplExportNutzungsplanung_$thema") {
+    task "nplImportNutzungsplanung_$thema"(type: Ili2pgReplace, dependsOn: "nplExportNutzungsplanung_$thema"){
         description = "Import der umgebauten Daten ins Schema agi_oereb_staging der Oereb"
         group = GROUP
         database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
         dbschema = "arp_npl"
         dataFile = file(Paths.get(pathToTempFolder.toString(), "2580_2018-02-13.xtf"))
         dataset = "2580"
-        disableValidation = true
+        disableValidation = true                                       //************************************************ Achtung disableValidation
         strokeArcs = true
         //--createImportTabs --createBasketCol --createDatasetCol ???
     }
 */
 
+
+
+
+
+// nur zum Testen
+/*
+task importExportXtf(type: Ili2pgReplace){
+    description = "Import benötigte NPL-Daten in Entwicklugns-DB"
+    group = GROUP
+    database = [dbUriOereb_devel, dbUserOereb_devel, dbPwdOereb_devel]
+    dbschema = "agi_oereb_npl_staging"
+    dataFile = file(Paths.get(pathToTempFolder.toString(), "ch.so.arp.nutzungsplanung_npl_grundnutzung.oereb.xtf"))
+    dataset = "9999"
+    disableValidation = true                                                                     //**************** Achtung disableValidation
+    strokeArcs = true
+}
+*/
+
+
+task transformAllNplThemes(){
+    description = "Transform all NPL-Data"
+    //ignoreFailures = true
 }
 
-
-task exportAllNplThemes() {
-    description = "Umbau der NPL-Daten"
-}
-
-exportAllNplThemes.dependsOn {
-   // tasks.findAll { task -> task.name.startsWith('nplImport') }
-   tasks.findAll { task -> task.name.startsWith('nplDatenumbau_') }
+transformAllNplThemes.finalizedBy {
+    tasks.findAll { task -> task.name.startsWith("updateSymbols") }
 }
