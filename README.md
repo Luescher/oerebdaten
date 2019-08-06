@@ -17,3 +17,16 @@ Aus meiner Sicht müsste noch abgefangen werden, wenn eine neue Datei verfügbar
 
 
 ./start-gretl.sh --docker-image sogis/gretl-runtime:latest --job-directory ~/gretljobs/oereb_bundesdaten/ getAllOerebThemes
+
+
+
+## Gretljob Nutzungsplanungsdaten
+
+
+
+### OerebIconizerQgis3
+
+PNG aus DB kopieren
+psql -U admin -h localhost -p 54321 -d oereb -c "\copy (SELECT encode(symbol, 'hex') \
+from agi_oereb_npl_staging.transferstruktur_legendeeintrag where t_id = 1000000000175) \
+to STDOUT"  | xxd -p -r > output2.png
